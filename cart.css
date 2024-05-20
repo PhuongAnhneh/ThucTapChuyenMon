@@ -1,0 +1,87 @@
+:root{
+    --gray: gray;
+    --light-gray:rgb(243, 236, 236);
+    --pink: rgb(250, 171, 184);
+    --border-radius-gray: rgb(216, 214, 214);
+    --star: rgb(255, 157, 0);
+    --light-black:rgb(31, 30, 30);
+    --red: rgb(250, 128, 149);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.logo{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    background-color: var(--light-gray);
+    height: 100px;
+}
+.logoImg{
+    display: flex;
+    border-right: 1.5px solid var(--pink);
+    padding-right: 20px;
+    margin-right: 25px;
+}
+.logoImg img{
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    border-radius: 4px;
+}
+.logoText{
+    color: var(--red);
+    font-size: 25px;
+}
+#mainTable{
+    width: 95%;
+    margin: 20px auto;
+}
+.productLeft{
+    display: flex;;
+    align-items: center;
+    justify-content: start;
+}
+.productLeft img{
+    width: 110px;
+    height: 100px;
+}
+.productLeft p{
+    color: var(--gray);
+    font-weight: lighter;
+}
+.deleteProduct i{
+    font-size: 25px;
+    color: var(--gray);
+    cursor: pointer;
+}
+.chooseQuantity{
+    display: flex;
+}
+.chooseQuantity div:first-child,
+.chooseQuantity div:last-child{
+    border: 1px solid var(--gray);
+    padding: 5px 15px;
+    cursor: pointer;
+}
+.chooseQuantity div:nth-child(2){
+    border: 1px solid var(--gray);
+    padding: 5px 25px;
+    cursor: pointer
+}
+.paymentBtn a{
+    color: white;
+    text-decoration: none;
+    background-color: var(--pink);
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    transition: 0.5s ease;
+    margin-left: 1000px;
+}
+.paymentBtn a:hover{
+    background-color: var(--red);
+}

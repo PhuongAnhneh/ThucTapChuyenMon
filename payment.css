@@ -5,6 +5,7 @@
     --border-radius-gray: rgb(216, 214, 214);
     --star: rgb(255, 157, 0);
     --light-black:rgb(31, 30, 30);
+    --red: rgb(250, 128, 149);
 }
 *{
     box-sizing: border-box;
@@ -168,6 +169,18 @@
 }
 .addressCompany p{
     margin: 8px 0;
+}
+.paymentBtn button{
+    padding: 10px 15px;
+    background-color: var(--pink);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.paymentBtn button:hover{
+    background-color: var(--red);
 }
 @media (max-width: 1024px){
     .policy{

@@ -15,19 +15,21 @@
 }
 .logo{
     display: flex;
-    justify-content: start;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--pink);
     height: 100px;
 }
-.logo img{
+.logoImg{
+    display: flex;
+}
+.logoImg img{
     width: 40px;
     height: 40px;
     margin-left: 20px;
 }
 .header-main-input {
     width: 50%;
-    margin-left: 100px;
 }
 .header-main-input input{
     width: 100%;
@@ -35,6 +37,23 @@
     padding-left: 10px;
     border: 1px solid var(--light-gray);
     border-radius: 5px;
+}
+.logoIcon i{
+    font-size: 25px;
+    color: var(--gray);
+    cursor: pointer;
+}
+#cartNumberTop{
+    position: absolute;
+    top: 18px;
+    right: 30px;
+    color: var(--pink);
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 1.3;
 }
 .container{
     display: flex;
@@ -147,7 +166,8 @@
 .buy{
     margin-top: 20px;
 }
-.buy button{
+.buy button,
+.buy a{
     border: 1px var(--gray);
     background-color: var(--pink);
     border-radius: 5px;
@@ -155,8 +175,10 @@
     margin-left: 100px;
     color: white;
     transition: all 0.5s ease;
+    text-decoration: none;
 }
-.buy button:hover{
+.buy button:hover,
+.buy a:hover{
     background-color:var(--red);
 }
 .product,

@@ -56,26 +56,32 @@
 .item-left-user i{
     color: var(--gray);
     font-size: 25px;
+    padding-left: 10px;
 }
 .item-left-account i{
     color: var(--blue);
     font-size: 25px;
+    padding-left: 10px;
 }
 .item-left-purchaseOrder i{
     color: var(--blue);
     font-size: 25px;
+    padding-left: 10px;
 }
 .item-left-text{
     margin-left: 10px;
     transition: 0.5s ease;
 }
-.item-left-text:hover{
-    color: var(--pink);
+.item-left-account{
+    background-color: var(--pink);
+    border-radius: 6px;
+    color: white;
 }
 .item-right{
     background-color: white;
     width: 75%;
     padding: 20px;
+    margin-left: 20px;
 }
 .myProfile{
     margin-bottom: 20px;
@@ -110,10 +116,10 @@
 }
 .loginNameBtn input,
 .userNameBtn input{
+    padding: 3px 10px;
     outline: none;
     border-radius: 5px;
     width: 350px;
-    padding: 3px;
     border: 1px solid var(--gray);
 }
 .userNameBtn{
@@ -124,7 +130,7 @@
     outline: none;
     border-radius: 5px;
     width: 250px;
-    padding: 3px;
+    padding: 3px 10px;
     border: 1px solid var(--gray);
 }
 .phoneNumberInfor{
@@ -132,7 +138,7 @@
     outline: none;
     border-radius: 5px;
     width: 250px;
-    padding: 3px;
+    padding: 3px 10px;
     border: 1px solid var(--gray);
 }
 .changeEmail,

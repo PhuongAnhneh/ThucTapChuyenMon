@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail</title>
-    <link rel="shortcut icon" href="./Pictures/Lele.png">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="shortcut icon" href="./Pictures/c.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -16,36 +16,42 @@
    
 </head>
 
-<body>
+<body onload="callAPIDetail()">
     <div class="logo">
-        <img src="./Pictures/cart.jpg" alt="">
-        <div class="logo-lele">
-            <img src="./Pictures/Lele.png" alt="Logo Lele Shop">
-            <img src="./Pictures/Chu E.png" alt="Logo Lele Shop">
-            <img src="./Pictures/Lele.png" alt="Logo Lele Shop">
-            <img src="./Pictures/Chu E.png" alt="Logo Lele Shop">
+        <div class="logoImg">
+            <img src="./Pictures/cart.jpg" alt="">
+            <div class="logo-lele">
+                <img src="./Pictures/Lele.png" alt="Logo Lele Shop">
+                <img src="./Pictures/Chu E.png" alt="Logo Lele Shop">
+                <img src="./Pictures/Lele.png" alt="Logo Lele Shop">
+                <img src="./Pictures/Chu E.png" alt="Logo Lele Shop">
+            </div>
         </div>
         <div class="header-main-input">
             <div>
                 <input id="input_search" type="text" placeholder="Enter your product name...">
             </div>
         </div>
+        <div class="logoIcon">
+            <a href="./cart.html"><i class="fa-solid fa-cart-shopping addToCart"></i></a>
+            <span id="cartNumberTop">0</span>
+        </div>
     </div>
     <div class="container">
         <div class="container1">
             <div class="container1-img">
-                <div class="container1-img-main">
-                    <img src="https://leleshop.vercel.app/assets/images/products/jacket-3.jpg" alt="">
+                <div id="imageContainer" class="container1-img-main">
+                    
                 </div>
-                <div class="container1-img-child">
-                    <img src="https://leleshop.vercel.app/assets/images/products/jacket-4.jpg" alt="">
+                <div id='imageContainerChild' class="container1-img-child">
+                    
                 </div>
             </div>
         </div>
         <div class="container2">
             <div class="container2-text">
                 <div class="container2-text-main">
-                    <p>Mens Winter Leathers Jackets</p>
+                    <p id="name">Mens Winter Leathers Jackets</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus inventore, deserunt voluptas voluptatibus autem quia optio libero eaque nemo, minima labore sit voluptate alias itaque obcaecati! Adipisci consequatur quidem delectus.</p>
                     <div class="container2-price">
                         <div>
@@ -56,7 +62,7 @@
                             <i class="fa-regular fa-star"></i>
                         </div>
                         <div>
-                            <span>280,000</span>
+                            <span id="price"></span>
                         </div>
                     </div>
                 </div>
@@ -101,14 +107,14 @@
                     <div class="quantity">
                         <div>Số lượng</div>
                         <div class="chooseQuantity">
-                            <div onclick="minusToCart()">-</div>
+                            <div onclick="minus()">-</div>
                             <div id="cartNumber">0</div>
-                            <div onclick="addToCart()">+</div>
+                            <div onclick="add()">+</div>
                         </div>
                     </div>
                     <div class="buy">
-                        <button>Thêm vào giỏ hàng</button>
-                        <button>Mua ngay</button>
+                        <button onclick="addToCart()">Thêm vào giỏ hàng</button>
+                        <a href="./payment.html">Mua ngay</a>
                     </div>
                 </div>
             </div>
