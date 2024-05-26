@@ -26,6 +26,9 @@ const orderSchema = new mongo.Schema({
     total_price:{
         type: Number
     },
+    status : {
+        type : Number
+    },
     items:[
         {
             pr_id : {
@@ -41,6 +44,15 @@ const orderSchema = new mongo.Schema({
             },
             name:{
                 type : String
+            },
+            size:{
+                type : String
+            },
+            img:{
+                type : String
+            },
+            total_price:{
+                type : Number
             }
         }
     ],
@@ -48,5 +60,5 @@ const orderSchema = new mongo.Schema({
         type : String
     }
 })
-const Order = mongo.model("Orders", orderSchema, 'orders')
-module.exports = Order
+const Orders = mongo.model("Orders", orderSchema)
+module.exports = Orders

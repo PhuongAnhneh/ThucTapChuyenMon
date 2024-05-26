@@ -1,10 +1,11 @@
 const express = require("express")
 const router = express.Router()
-const userController = require("../Controllers/userController")
+const productController = require("../Controllers/productCotroller")
 
-//user
-router.post("/register",userController.register)
-router.post("/login",userController.login)
+router.get("/getAll",productController.getAllProduct)
+router.put("/edit",productController.editProduct)
+router.delete("/delete",productController.deleteProduct)
+router.get("/getProductById/:productId",productController.getProductById)
 
 
 module.exports = router

@@ -121,27 +121,27 @@
 }
 .chooseColor{
     margin-left: 180px;
+    margin-bottom: 20px;
 }
-.chooseColor button,
 .chooseSize button{
     border: 1px solid var(--gray);
     padding: 5px;
     background-color: white;
     transition: 0.5s ease;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+.chooseColor button{
+    border: none;
+    background-color: white;
+    transition: 0.5s ease;
+}
+.chooseColor button:last-child{
+    margin-left: 30px;
 }
 .color-btn{
-    width: 35px;
-    height: 30px;
-}
-.chooseColor button:last-child,
-.chooseSize button{
-    margin-left: 10px;
-    border-radius: 4px;
-}
-.chooseColor button:hover,
-.chooseSize button:hover{
-    background-color: var(--light-gray);
-    border: none;
+    width: 40px;
+    height: 35px;
 }
 .size{
     margin: 10px 0;
@@ -245,4 +245,17 @@
 }
 .addressCompany p{
     margin: 8px 0;
+}
+.size-btn.selected{
+    background-color: var(--pink);
+    color: white;
+    border: none;
+  }
+
+.color-btn.selected{
+    transform: scale(1.3);
+    border: 1px solid var(--gray);
+    overflow: hidden;
+    border-radius: 4px;
+    object-fit: cover;
 }

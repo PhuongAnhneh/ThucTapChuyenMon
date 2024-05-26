@@ -30,9 +30,9 @@
         <div class="header-title">
             <p>FREE SHIPPING THIS WEEK ORDER OVER - $55</p>
         </div>
-        <div>
-            Phuong Anh
-        </div>
+        <p id="name_user">
+
+        </p>
     </div>
     <div class="header-main">
         <div class="header-main-img">
@@ -595,6 +595,8 @@
             document.getElementById('cartNumber').innerText = cartCount;
             alert('Đã thêm thành công vào giỏ hàng')
         }
+        
+        document.getElementById('name_user').innerText = JSON.parse( localStorage.getItem("user_info"))?.full_name
     </script>
 </body>
 
