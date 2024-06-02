@@ -1,6 +1,9 @@
 let cartCount = 0;
 let imgSrc ="";
 let sizePro = "";
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('productid');
+
 function add() {
     cartCount++;
     document.getElementById('cartNumber').innerText = cartCount;
@@ -13,35 +16,42 @@ let cartCountTop = 0;
 function addToCart() {
     cartCountTop++;
     console.log("kkk",imgSrc);
+    var pri =  document.getElementById('price').textContent;
     var item_order = {
-        pr_id : 0,
+        pr_id : productId,
         qty :cartCount,
-        price: document.getElementById('price').textContent,
+        price: pri,
         name : document.getElementById('name').textContent,
         size: sizePro,
         img : imgSrc,
-        total_price:100
+        total_price: cartCount *  pri
     }
     console.log(item_order);
-    // localStorage.removeItem('items_cart')
-    var list = localStorage.getItem('items_cart')
+    
+    var list = JSON.parse(localStorage.getItem('items_cart'))
     if(list){
-        var ld = JSON.parse(list)
-    console.log("ffff",ld);
-
-        var newlist = ld.push(item_order)
-        localStorage.setItem('items_cart',JSON.stringify(newlist))
+        if(list.find(item=> item.pr_id === item_order.pr_id && item.size === item_order.size && item.img === item_order.img)){
+            list.map((item) => ({
+                ...item,
+                    qty : item.qty + item_order.qty,
+                    total_price  : item.total_price + item_order.total_price 
+                }))
+                 localStorage.setItem('items_cart',JSON.stringify(list))
+        }
+       else {
+            list = [...list,item_order]
+            localStorage.setItem('items_cart',JSON.stringify(list))
+            alert('Đã thêm thành công vào giỏ hàng')
+        }
+        
         console.log("them 1 ");
     }else {
-        localStorage.setItem('items_cart',JSON.stringify([item_order]))
-        console.log("tao new");
+        list = [item_order]
+        localStorage.setItem('items_cart',JSON.stringify(list))
+        alert('Đã thêm thành công vào giỏ hàng')
     }
-    // document.getElementById('cartNumberTop').innerText = cartCount;
-    // alert('Đã thêm thành công vào giỏ hàng')
 }
 function callAPIDetail(){
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('productid');
 
     fetch(`http://localhost:8000/api/product/getProductById/${productId}`)
         .then(response => response.json())   

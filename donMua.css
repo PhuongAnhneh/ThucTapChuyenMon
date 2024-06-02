@@ -72,6 +72,15 @@
     margin-left: 10px;
     transition: 0.5s ease;
 }
+.item-left-account a{
+    transition: 0.2s ease;
+    color:black;
+    text-decoration: none;
+}
+.item-left-account a:hover{
+    color: var(--pink);
+    border-radius: 6px;
+}
 .item-left-purchaseOrder{
     background-color: var(--pink);
     border-radius: 6px;

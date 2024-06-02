@@ -13,19 +13,21 @@
 <body>
     <div class="payment">
         <div class="payment-infor">
-            <h1>Lele Shop</h1>
+            <a href="./Leleshop.html">
+                <h1>Lele Shop</h1>
+            </a>
             <div class="payment-menu">
-                <p>Giỏ hàng</p>
+                <a href="./cart.html">
+                    <p>Giỏ hàng</p>
+                </a>
                 <p>></p>
-                <p>Thông tin vận chuyển</p>
+                <a href="./donMua.html">
+                    <p>Thông tin vận chuyển</p>
+                </a>
                 <p>></p>
                 <p>Phương thức thanh toán</p>
             </div>
             <h3>Thông tin thanh toán</h3>
-            <div class="check-login">
-                <p>Bạn đã có tài khoản?</p>
-                <p>Đăng nhập</p>
-            </div>
             <div class="payment-input">
                 <input type="text" placeholder="Họ và tên" class="inputName">
                 <div class="inputEmailNumber">
@@ -65,11 +67,11 @@
                 </div>
                 <div class="delivery">
                     <p>Phí ship</p>
-                    <p>30,000</p>
+                    <p>0</p>
                 </div>
                 <div class="total">
                     <p>Tổng tiền</p>
-                    <p>310,000</p>
+                    <p>280,000</p>
                 </div>
                 <div class="paymentBtn">
                     <button>
@@ -102,33 +104,5 @@
     </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
-<script>
-    var citis = document.getElementById("city");
-    var districts = document.getElementById("district");
-    var Parameter = {
-        url: "https://raw.githubusercontent.com/kenzouno1/DiaGioiHanhChinhVN/master/data.json", 
-        method: "GET", 
-        responseType: "application/json", 
-    };
-    var promise = axios(Parameter);
-    promise.then(function (result) {
-        renderCity(result.data);
-    });
-
-    function renderCity(data) {
-        for (const x of data) {
-        citis.options[citis.options.length] = new Option(x.Name, x.Id);
-        }
-        citis.onchange = function () {
-        district.length = 1;
-        if(this.value != ""){
-            const result = data.filter(n => n.Id === this.value);
-
-            for (const k of result[0].Districts) {
-                district.options[district.options.length] = new Option(k.Name, k.Id);
-            }
-        }
-        }
-    }
-</script>
+<script src="./payment.js"></script>
 </html>

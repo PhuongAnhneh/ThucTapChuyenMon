@@ -21,6 +21,10 @@
 .payment-infor{
     width: 45%;
 }
+.payment-infor a,
+.payment-menu a{
+    text-decoration: none;
+}
 .payment-infor h1{
     color: var(--pink);
     margin-bottom: 15px;
@@ -38,15 +42,6 @@
 }
 .payment-infor h3{
     margin: 10px 0;
-}
-.check-login{
-    display: flex;
-    margin-bottom: 10px;
-}
-.check-login p:nth-child(2){
-    margin-left: 5px;
-    color: var(--gray);
-    cursor: pointer;
 }
 .inputName,
 .inputAddress{
@@ -75,7 +70,7 @@
 }
 .inputPhoneNumber,
 .selectDistrict{
-    width: 38%;
+    width: 39%;
     height: 40px;
     border-radius: 5px;
     outline: none;
