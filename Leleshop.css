@@ -21,7 +21,7 @@
     border-bottom: 1px solid var(--light-gray);
 }
 #name_user{
-    width: 150px;
+    width: 250px;
     font-weight: bold;
     color: var(--pink);
     text-decoration: none;

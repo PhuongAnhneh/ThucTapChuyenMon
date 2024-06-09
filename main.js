@@ -40,8 +40,6 @@ function register(e){
             .then(response => response.json())
             .then(responseData => {
                 console.log(responseData);
-                // Thành công thì đóng modal và alert
-                // formProduct.style.transform = "translate(-100%, 0)"
                 alert("Tạo thành công");
                 window.location.href="login.html"
             })
@@ -49,14 +47,6 @@ function register(e){
                 console.error("Lỗi: " + error);
                 alert("Lỗi: " + error);
             });
-        // if (isEmailExist(email)) {
-        //     alert("Email đã được sử dụng. Vui lòng nhập email khác!");
-        //     return false;
-        // }
-        // var json = JSON.stringify({username: username, email: email, password: password});
-        // localStorage.setItem(username, json);
-        // alert("Bạn đã đăng ký thành công!");
-        // return true;
     }  else {
         if (username.length < 2) {
             alert("Tên người dùng phải có ít nhất 2 kí tự");
@@ -90,8 +80,6 @@ function login(e){
             .then(responseData => {
                 console.log("dđfffff",responseData?.data);
 
-                // Thành công thì đóng modal và alert
-                // formProduct.style.transform = "translate(-100%, 0)"
                 var us = {
                     full_name : responseData?.data?.full_name,
                     email : responseData?.data?.email,

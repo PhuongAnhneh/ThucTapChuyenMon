@@ -1,6 +1,7 @@
 let cartCount = 0;
 let imgSrc ="";
 let sizePro = "";
+let gia = 0
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('productid');
 
@@ -16,7 +17,7 @@ let cartCountTop = 0;
 function addToCart() {
     cartCountTop++;
     console.log("kkk",imgSrc);
-    var pri =  document.getElementById('price').textContent;
+    var pri =  gia
     var item_order = {
         pr_id : productId,
         qty :cartCount,
@@ -27,7 +28,7 @@ function addToCart() {
         total_price: cartCount *  pri
     }
     console.log(item_order);
-    
+    // localStorage.removeItem("items_cart")
     var list = JSON.parse(localStorage.getItem('items_cart'))
     if(list){
         if(list.find(item=> item.pr_id === item_order.pr_id && item.size === item_order.size && item.img === item_order.img)){
@@ -56,7 +57,8 @@ function callAPIDetail(){
     fetch(`http://localhost:8000/api/product/getProductById/${productId}`)
         .then(response => response.json())   
         .then(data => {
-            document.getElementById('price').innerText = data?.product.price
+            document.getElementById('price').innerText = data?.product.price.toLocaleString()
+            gia = data?.product.price
             console.log(data); 
             document.getElementById('name').innerText = data?.product.name
             const imageContainer = document.getElementById('imageContainer');

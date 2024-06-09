@@ -85,6 +85,7 @@
     display: flex;
     gap:50px;
     align-items: center;
+    border-bottom: 1px solid var(--light-gray);
 }
 .payment-img{
     width: 150px;
@@ -106,25 +107,9 @@
 .payment-product-text p:nth-child(3){
     color: var(--gray);
 }
-.payment-discount{
-    display: flex;
-    justify-content: space-between;
-}
-.btnDiscount{
-    width: 36%;
-    height: 40px;
-    border-radius: 5px;
-    border: none;
-    color: white;
-    background: var(--border-radius-gray);
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-.btnDiscount:hover{
-    background: var(--pink);
-}
-.money{
-    width: 90%;
+
+.totalPayment{
+    width: 80%;
     justify-content: space-between;
     margin: 0 auto;
 }

@@ -29,7 +29,7 @@ function callApi() {
                             <p>Phân loại hàng: ${item?.size}</p>
                         </div>
                     </th>
-                    <td>${item?.price}</td>
+                    <td>${item?.price.toLocaleString()}</td>
                     <td>
                         <div class="chooseQuantity">
                             <div class="quantity-minus" data-index="${index}">-</div>
@@ -37,7 +37,7 @@ function callApi() {
                             <div class="quantity-plus" data-index="${index}">+</div>
                         </div>
                     </td>
-                    <td id="totalPrice_${index}">${totalPricePerItem}</td>
+                    <td id="totalPrice_${index}">${totalPricePerItem.toLocaleString()}</td>
                     <td class="deleteProduct"><button class="delete-btn" data-index="${index}"><i class="uil uil-trash-alt"></i></button></td>
                 </tr>
             `;
@@ -85,3 +85,6 @@ function callApi() {
         alert('Chưa có sản phẩm nào được thêm vào giỏ hàng');
     }
 }
+
+
+

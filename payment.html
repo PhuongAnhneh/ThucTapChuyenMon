@@ -10,7 +10,7 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
+<body onload="callApi()">
     <div class="payment">
         <div class="payment-infor">
             <a href="./Leleshop.html">
@@ -25,16 +25,17 @@
                     <p>Thông tin vận chuyển</p>
                 </a>
                 <p>></p>
-                <p>Phương thức thanh toán</p>
+                <a href="./paymentMethods.html">
+                    <p>Phương thức thanh toán</p>
+                </a>
             </div>
             <h3>Thông tin thanh toán</h3>
             <div class="payment-input">
-                <input type="text" placeholder="Họ và tên" class="inputName">
+                <input type="text" placeholder="Họ và tên" id = "input_fullname" class="inputName">
                 <div class="inputEmailNumber">
-                    <input type="email" placeholder="Email" class="inputEmail"> 
-                    <input type="number" placeholder="Số điện thoại" class="inputPhoneNumber">
+                    <input type="email" placeholder="Email" class="inputEmail" id="input_email"> 
+                    <input type="number" placeholder="Số điện thoại" class="inputPhoneNumber" id="input_phone">
                 </div>
-                <input type="text" name="" id="" placeholder="Địa chỉ" class="inputAddress">
                 <div>
                     <select name="" id="city" class="selectCity">
                         <option value="">Chọn tỉnh thành</option>
@@ -43,23 +44,23 @@
                         <option value="">Chọn Quận / Huyện</option>
                     </select>
                 </div>
+                <input type="text" name="" id="input_address" placeholder="Địa chỉ" class="inputAddress">
             </div>
+            
         </div>
-        <div class="payment-product">
-            <div class="payment-product-infor">
+        <div class="payment-product" id="payment-item">
+            <!-- <div class="payment-product-infor">
                 <div class="payment-img">
                     <img src="https://leleshop.vercel.app/assets/images/products/jacket-3.jpg" alt="">
                 </div>
                 <div class="payment-product-text">
                     <p>Jacket</p>
                     <p>Mens Winter Leathers Jackets</p>
+                    <span>Phân loại: M,</span> <span> x2</span>
                     <p>280,000</p>
                 </div>
             </div>
-            <div class="payment-discount">
-                <input type="text" class="inputDiscount" placeholder="Mã giảm giá">
-                <button class="btnDiscount">Sử dụng</button>
-            </div>
+          
             <div class="money">
                 <div class="productMoney">
                     <p>Tạm tính</p> 
@@ -78,9 +79,22 @@
                         Thanh toán
                     </button>
                 </div>
+            </div> -->
+            <div class="totalPayment">
+                <div class="productMoney">
+                    <p>Tổng tiền</p> 
+                    <p id="total_payment">0</p>
+                </div>
+                    
+                <div class="paymentBtn" >
+                    <button>
+                        Thanh toán
+                    </button>
+                </div>
             </div>
         </div>
     </div>
+    
     <div class="footer">
         <div class="policy">
             <a href="https://help.shopee.vn/portal/article/77244">

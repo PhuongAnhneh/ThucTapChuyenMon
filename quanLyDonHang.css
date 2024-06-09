@@ -91,10 +91,17 @@ table{
     font-weight: bold;
 }
 .unconfimred-btn,
-.confirm-btn{
+.clear-btn{
     border: none;
     color: white;
     background-color: var(--pink);
     border-radius: 4px;
     padding: 3px 8px;
 }
+
+
+.confirmed-btn {
+    background-color: var(--red)
+}
+
+
